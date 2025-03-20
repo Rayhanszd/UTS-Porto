@@ -1,0 +1,331 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0F172A, #1E293B);
+    color: #fff;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px; /* Konsisten dengan halaman About */
+    background: rgba(10, 18, 32, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease-in-out;
+}
+
+header.scrolled {
+    background: rgba(10, 18, 32, 1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #E63946;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: #1abc9c;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+/* Services Section */
+#services {
+    max-width: 1200px;
+    margin: 120px auto 60px;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#services h2 {
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #1abc9c, #E63946);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#services h2::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #E63946;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* Grid untuk layanan */
+.service-list {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Kotak layanan */
+.service {
+    background: rgba(30, 42, 71, 0.85);
+    padding: 70px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 800px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.service:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(26, 188, 156, 0.4);
+    background: rgba(30, 42, 71, 0.95);
+}
+
+/* Ikon layanan */
+.service::before {
+    content: "💻"; /* Ikon default, ganti sesuai kebutuhan */
+    font-size: 50px;
+    display: block;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:nth-child(1)::before { content: "🌐"; } /* Web Development */
+.service:nth-child(2)::before { content: "📡"; } /* Network Engineering */
+.service:nth-child(3)::before { content: "🛠️"; } /* Software Solutions */
+.service:nth-child(4)::before { content: "🎨"; } /* UI/UX Design */
+
+.service:hover::before {
+    transform: scale(1.2);
+}
+
+/* Judul layanan */
+.service h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+/* Deskripsi layanan */
+.service p {
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(10, 18, 32, 0.95);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    font-size: 16px;
+    opacity: 0.85;
+    position: relative;
+    width: 100%;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideInTop 0.5s ease-in-out;
+}
+
+@keyframes slideInTop {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h3 {
+    font-size: 28px;
+    color: #1abc9c;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #E63946;
+}
+
+.image-slider-modal {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide-modal {
+    display: none;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+.slide-modal.active {
+    display: block;
+}
+
+.indicators-modal {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot-modal {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: #A8A8A8;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot-modal.active {
+    background-color: #E63946;
+}
+
+.dot-modal:hover {
+    background-color: #1abc9c;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 50px; /* Ukuran header tetap konsisten */
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #services {
+        margin: 100px 20px 40px;
+        padding: 30px 10px;
+    }
+
+    #services h2 {
+        font-size: 32px;
+    }
+
+    .service {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+

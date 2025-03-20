@@ -1,0 +1,696 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+
+/* Reset Styles */        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0F172A, #1E293B);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(10, 18, 32, 0.95);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background 0.3s ease-in-out;
+        }
+
+        header.scrolled {
+            background: rgba(10, 18, 32, 1); 
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #E63946;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: #1abc9c;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        
+
+
+
+        /* Dashboard Awal */
+        .hero {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 0 10%;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(26, 188, 156, 0.2), transparent);
+            border-radius: 50%;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .hero-text {
+            max-width: 50%;
+            text-align: left;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #1abc9c, #E63946);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #A8A8A8;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .hero img.profile-photo {
+            width: 650px;
+            border-radius: 20px;
+            margin-left: 300; /*geser  */
+            margin-top: -490px; /* Geser ke atas */
+            filter: drop-shadow(20px 20px 25px rgba(0, 0, 0, 0.5));
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .hero img.profile-photo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(25px 25px 30px rgba(26, 188, 156, 0.5));
+        }
+
+
+
+        /* Icon Sosial Media */
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            color: #E63946;
+            font-size: 20px;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        
+        /*Footer Paling Bawah*/
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: rgba(10, 18, 32, 0.95);
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            font-size: 16px;
+            opacity: 0.85;
+            position: relative;
+            width: 100%;
+        }
+        
+
+
+        /* Bagian Sertifikat */
+        #projects {
+            padding: 80px 5%;
+            text-align: center;
+            background: rgba(30, 42, 71, 0.1);
+        }
+
+        #projects h2 {
+            font-size: 40px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #1abc9c, #E63946);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        #projects h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #E63946;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .project {
+            background: rgba(30, 42, 71, 0.85);
+            border-radius: 15px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+
+        .project:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(26, 188, 156, 0.4);
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            color: #1abc9c;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 16px;
+            color: #A8A8A8;
+            line-height: 1.6;
+        }
+
+        .btn-open-modal {
+            background: linear-gradient(90deg, #1abc9c, #16a085);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-open-modal:hover {
+            background: linear-gradient(90deg, #16a085, #1abc9c);
+            transform: scale(1.1);
+        }
+        
+
+        /*Icon Sosmed*/
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+            margin-right: 480px;
+        }
+        
+        .social-icons a {
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        
+        .social-icons a {
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .social-icons a:nth-child(1) { color: #25D366; } /* WhatsApp */
+        .social-icons a:nth-child(2) { color: #E4405F; } /* Instagram */
+        .social-icons a:nth-child(3) { color: #0088CC; } /* Telegram */
+        .social-icons a:nth-child(4) { color: #00C300; } /* Line */
+        .social-icons a:nth-child(5) { color: #0088CC; } /* Linkedin */
+
+        .social-icons a:hover {
+            color: #ffffff; 
+        }
+        
+
+        /* Licenses & Certifications Gaya untuk Modal */
+        .modal {
+            display: none; /* Awalnya tersembunyi */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap */
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            color: #333;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Styling untuk gambar di dalam modal */
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+
+
+        /* Bagian Project  */
+        #portfolio {
+            width: 100%;
+            padding: 80px 5%;
+            text-align: center;
+            background: rgba(30, 42, 71, 0.1);
+        }
+
+        #portfolio h2 {
+            font-size: 40px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #1abc9c, #E63946);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        #portfolio h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #E63946;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            background: rgba(30, 42, 71, 0.85);
+            width: 90%;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(26, 188, 156, 0.4);
+        }
+
+        .image-slider {
+            width: 650px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .indicators {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background-color: #A8A8A8;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #E63946;
+        }
+
+        .dot:hover {
+            background-color: #1abc9c;
+        }
+
+        .portfolio-details {
+            text-align: left;
+            max-width: 600px;
+        }
+
+        .portfolio-details h3 {
+            font-size: 26px;
+            color: #1abc9c;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-details p {
+            font-size: 16px;
+            color: #A8A8A8;
+            line-height: 1.6;
+        }
+
+        .btn-show-more {
+            margin-top: 20px;
+            background: linear-gradient(90deg, #1abc9c, #16a085);
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-show-more:hover {
+            background: linear-gradient(90deg, #16a085, #1abc9c);
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles Untuk Project */
+        .modal {
+            display: none; /* Initially hidden */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Overlay */
+            overflow: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            color: #333;
+            text-align: left;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        /*bagian project*/
+
+        #portfolio {
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            background-color: #0F172A;
+        }
+        
+        .portfolio-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: #1e2a47;
+            width: 85%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-slider {
+            width: 650px; /* Sesuaikan ukuran yang diinginkan */
+        }
+        
+        .slide {
+            width: 100%;
+            height: auto;
+        }
+        
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        .indicators {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: red;
+        }
+        
+        .portfolio-details {
+            text-align: left;
+            max-width: 800px;
+        }
+        
+        .btn-show-more {
+            margin-top: 10px;
+            background-color: #E63946;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .btn-show-more:hover {
+            background-color: #C62828;
+        }
+        
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Image Slider in Modal */
+        .image-slider-modal {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides-modal {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .slide-modal {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slide-modal.active {
+            display: block;
+        }
+
+        /* Navigation Dots */
+        .indicators-modal {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot-modal {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot-modal.active {
+            background-color: red;
+        }

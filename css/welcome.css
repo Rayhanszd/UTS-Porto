@@ -1,0 +1,88 @@
+/* Latar belakang modal dengan efek blur */
+.modalwelcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Efek blur */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Konten modal dengan tampilan elegan */
+.modal-contentwelcome {
+    background: white;
+    padding: 25px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+/* Tombol close (X) yang lebih modern */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Animasi muncul */
+.modal.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+
+/* Judul modal */
+.modal-content h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Teks modal */
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Tombol aksi */
+#closeModal {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#closeModal:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+#closeModal:active {
+    transform: scale(0.95);
+}

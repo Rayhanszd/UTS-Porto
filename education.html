@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Rayhan</title>
+    <link rel="stylesheet" href="css/education.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Rayhanszd</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="education.html" class="active">Education</a></li>
+                <li><a href="mailto:9a.muhammadrayhan.19@gmail.com">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="education">
+        <h2>Pendidikan</h2>
+        <div class="education-list">
+            <div class="education-item">
+                <img src="foto/binus1.jpeg" alt="Binus University Malang">
+                <h3>Bina Nusantara University Malang</h3>
+                <p>S1 - Computer Science (2023 - Sekarang)</p>
+            </div>
+            <div class="education-item">
+                <img src="foto/telkom1.jpg" alt="Binus University Malang">
+                <h3>SMK Telkom Malang</h3>
+                <p>Jurusan Teknik Komputer & Jaringan (2019 - 2022)</p>
+            </div>
+
+            <div class="education" id="education1">
+                <div class="image-slider">
+                    <div class="slides-container">
+                        <img src="foto/binus2.jpeg" class="slide active" alt="Gambar 1">
+                            <img src="foto/binus3.jpeg" class="slide" alt="Gambar 2">
+                            <img src="foto/binus4.jpeg" class="slide" alt="Gambar 3">
+                            <img src="foto/binus5.jpeg" class="slide" alt="Gambar 4">
+                    </div>
+                    <div class="indicators">
+                        <span class="dot active" onclick="changeModalSlide(0)"></span>
+                            <span class="dot" onclick="changeModalSlide(1)"></span>
+                            <span class="dot" onclick="changeModalSlide(2)"></span>
+                            <span class="dot" onclick="changeModalSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education" id="education2">
+                <div class="image-slider">
+                    <div class="slides-container">
+                        <img src="foto/telkom2.jpeg" class="slide active" alt="Gambar 1">
+                            <img src="foto/telkom3.jpeg" class="slide" alt="Gambar 2">
+                            <img src="foto/telkom4.jpeg" class="slide" alt="Gambar 3">
+                    </div>
+                    <div class="indicators">
+                        <span class="dot active" onclick="changeModalSlide(0)"></span>
+                            <span class="dot" onclick="changeModalSlide(1)"></span>
+                            <span class="dot" onclick="changeModalSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Rayhan. All rights reserved.</p>
+    </footer>
+
+    <script src="js/education.js"></script>
+</body>
+</html>

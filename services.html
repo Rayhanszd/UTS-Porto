@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - Rayhan</title>
+    <link rel="stylesheet" href="css/service.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Rayhanszd</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="mailto:emailkamu@example.com">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Layanan Saya</h2>
+        <div class="service-list">
+            <div class="service" data-modal="modal-web">
+                <h3>Pengembangan & Desain Web</h3>
+                <p>Menciptakan website yang menarik, responsif, dan user-friendly dengan desain modern serta pengalaman pengguna yang optimal</p>
+                <br>
+                <p>Klik untuk melihat Dokumentasi</p>
+            </div>
+            <div class="service" data-modal="modal-network">
+                <h3>Installasi Jaringan</h3>
+                <p>Merancang, mengkonfigurasi, dan mengoptimalkan jaringan untuk memastikan koneksi yang stabil, aman, dan efisien dalam berbagai lingkungan</p>
+                <br>
+                <p>Klik untuk melihat Dokumentasi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal untuk Pengembangan & Desain Web -->
+    <div id="modal-web" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Dokumentasi Pengembangan & Desain Web</h3>
+            <div class="image-slider-modal">
+                <img src="foto/web1.jpg" class="slide-modal active" alt="Web Doc 1">
+                <img src="foto/web2.jpg" class="slide-modal" alt="Web Doc 2">
+                <img src="foto/web3.jpg" class="slide-modal" alt="Web Doc 3">
+                <img src="foto/web4.jpg" class="slide-modal" alt="Web Doc 4">
+                <div class="indicators-modal">
+                    <span class="dot-modal active"></span>
+                    <span class="dot-modal"></span>
+                    <span class="dot-modal"></span>
+                    <span class="dot-modal"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal untuk Installasi Jaringan -->
+    <div id="modal-network" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Dokumentasi Installasi Jaringan</h3>
+            <div class="image-slider-modal">
+                <img src="foto/jaringan1.jpg" class="slide-modal active" alt="Network Doc 1">
+                <img src="foto/jaringan2.jpg" class="slide-modal" alt="Network Doc 2">
+                <img src="foto/jaringan3.jpg" class="slide-modal" alt="Network Doc 3">
+                <img src="foto/jaringan4.jpg" class="slide-modal" alt="Network Doc 4">
+                <div class="indicators-modal">
+                    <span class="dot-modal active"></span>
+                    <span class="dot-modal"></span>
+                    <span class="dot-modal"></span>
+                    <span class="dot-modal"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Rayhan. All rights reserved.</p>
+    </footer>
+
+    <script src="js/service.js"></script>
+</body>
+</html>
